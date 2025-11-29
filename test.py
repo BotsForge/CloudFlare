@@ -10,12 +10,12 @@ api_key = '9a35d691-6522-410e-8822-5c697bd28286'
 
 task = CaptchaTask(
     type='AntiTurnstileTaskProxyLess',
-    websiteURL='https://faucet.sonic.game',
-    websiteKey='0x4AAAAAAAc6HG1RMG_8EHSC'
+    websiteURL='https://app.nodepay.ai/login',
+    websiteKey='0x4AAAAAAAx1CyDNL8zOEPe7'
 )
 
 
-def create_task():
+def create_task(task):
     url = host + '/createTask'
     payload = CaptchaCreateTaskPayload(clientKey=api_key, task=task).json()
     r = httpx.post(url, json=payload)
@@ -45,7 +45,7 @@ def test():
     for i in range(amount_of_cycles):
         ids = []
         for _ in range(amount_of_tasks_per_cycle):
-            if id_ := create_task():
+            if id_ := create_task(task):
                 ids.append(id_)
 
         for id_ in ids:

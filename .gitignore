@@ -167,6 +167,7 @@ old_browser.py
 browser3.py
 admtools
 *.bat
+test_internal*.py
 
 *.js
 *.7z
